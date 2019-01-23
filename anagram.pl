@@ -16,11 +16,13 @@ use warnings;
 use 5.018;
 
 sub char_count {
+    #counts how many $char in $str
     my ($char, $str) = @_;
     my $count = 0;
+    #make array of chars from string
     my @arr_from_str = split(//, $str);
-    for my $i (0..$#arr_from_str) {
-        if ("$char" eq "$arr_from_str[$i]") { $count++; }
+    for my $current_char (@arr_from_str) {
+        if ($char eq $current_char) { $count++; }
     }
     return $count;
 }
@@ -30,14 +32,13 @@ sub is_anagram {
     if (length($s1) != length($s2)) {say "strings are not anagrams!"; exit 1;};
     my @arr_from_s1 = split(//, $s1);
     my @arr_from_s2 = split(//, $s2);
-    for my $i (0..length($s1)-1) {
-        if ( char_count($arr_from_s1[$i], $s1) != char_count($arr_from_s2[$i], $s1) ) {say "strings are not anagrams!"; exit 1;}
+    #get char from first string, count. Count how many times the same char appears in other string
+    for my $char_from_first_string (@arr_from_s1) {
+        if ( char_count($char_from_first_string, $s1) != char_count($char_from_first_string, $s2) ) {say "strings are not anagrams!"; exit 1;}
     }
-    #Boolean true
     say "strings are anagrams!";
+    #Boolean true
     return 1;
 }
 
-my $s1="bbba";
-my $s2="baba";
-is_anagram($s1,$s2);
+is_anagram(@ARGV);
