@@ -36,7 +36,7 @@ sub is_anagram {
     for my $char_from_first_string (@arr_from_s1) {
         if ( char_count($char_from_first_string, $s1) != char_count($char_from_first_string, $s2) ) {say "strings are not anagrams!"; exit 1;}
     }
-    say "strings are anagrams!";
+    say "Anagrams!";
     #Boolean true
     return 1;
 }
