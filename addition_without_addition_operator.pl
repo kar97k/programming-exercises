@@ -110,3 +110,4 @@ my $bin_sum = join("", @bin_sum_str);
 
 my $dec_sum = $binary->from_base($bin_sum);
 say "$a + $b = $dec_sum"
+
