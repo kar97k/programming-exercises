@@ -16,7 +16,7 @@ my $bin_b = $binary->to_base($b);
 #Addition operation generaly:
 #
 #	   11
-#   110001 
+#   	110001 
 #	------+
 #	001011
 #	------
@@ -110,6 +110,3 @@ my $bin_sum = join("", @bin_sum_str);
 
 my $dec_sum = $binary->from_base($bin_sum);
 say "$a + $b = $dec_sum"
-#my @digit_arr = (0..15);
-#$"="\t";
-#say "@digit_arr";
