@@ -5,18 +5,22 @@
 #перестановкой другой.
 
 a = 'abba'
-b = 'abab'
+b = 'abbb'
 
 copy_a = a
 copy_b = b
 curr_length = len(copy_a)
 anagrams = True
 
+#remove identical symbols from string, try to reach perfprmance gain 
+#
 #get first symbol of first string. Count, how many times it appears. Remove such symbols from string
 #process such way second string
 #Example:
 #from:   abdadfa    ffwarad    #curr_char='a'
 #to:     bddf       ffwrd
+#
+#string will be shorteer and shorter after every iteration
 #repeat until first string became zero
 
 if len(a) == len(b):
