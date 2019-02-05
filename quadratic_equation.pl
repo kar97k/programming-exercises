@@ -27,7 +27,7 @@ sub solve_equation {
                 $result = "@res_arr";
             }
             elsif ($D = 0) {
-                $x1=-$b_value/2;
+                $x1=-$b_value/2*$a_value;
                 $result="$x1";
             }
             else {$result="No solution!";}
